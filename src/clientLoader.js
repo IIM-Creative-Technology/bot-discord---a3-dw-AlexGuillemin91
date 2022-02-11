@@ -11,10 +11,6 @@ module.exports = {
       intents = [...intents, 'GUILD_MESSAGES'];
     }
 
-    if (!intents) {
-      intents = ['GUILD_MESSAGES']
-    }
-
     const client = new Discord.Client({
       intents: intents
     });
