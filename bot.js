@@ -10,7 +10,7 @@ const ban = require('./src/banWords');
 require('colors');
 require('dotenv').config();
 
-const COMMAND_PREFIX = '!a-';
+const COMMAND_PREFIX = '!';
 
 clientLoader.createClient([
   'GUILDS',
@@ -38,8 +38,8 @@ clientLoader.createClient([
       // On découpe le message pour récupérer tous les mots
       const words = message.content.split(' ');
 
-      const commandName = words[0].slice(3); // Le premier mot du message, auquel on retire le préfix
-      const arguments = words.slice(3); // Tous les mots suivants sauf le premier
+      const commandName = words[0].slice(1); // Le premier mot du message, auquel on retire le préfix
+      const arguments = words.slice(1); // Tous les mots suivants sauf le premier
 
       if (client.commands.has(commandName)) {
         // La commande existe, on la lance
